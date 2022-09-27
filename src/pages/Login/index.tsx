@@ -1,3 +1,4 @@
+import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
@@ -27,6 +28,7 @@ const Login = () => {
     defaultValues,
     reValidateMode: "onChange",
   });
+    
 
   return (
     <Container>
@@ -49,7 +51,7 @@ const Login = () => {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button title="Entrar" disabled={isValid === false} />
         </Column>
       </LoginContainer>
     </Container>
